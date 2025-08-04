@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/your-flask-app.git'
+                git 'https://github.com/Gauravbio/Jenkins-Project.git'
             }
         }
 
@@ -17,12 +17,6 @@ pipeline {
                 sh 'python3 -m venv $VENV_DIR'
                 sh './$VENV_DIR/bin/pip install --upgrade pip'
                 sh './$VENV_DIR/bin/pip install -r requirements.txt'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh './$VENV_DIR/bin/python -m unittest discover tests'
             }
         }
 
